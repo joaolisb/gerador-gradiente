@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+:root {
+  --color1: #3C53C1;
+  --color2: #A3A6E9;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #343434;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(90deg, var(--color1), var(--color2));
+}
+
+.caixa {
+  width: 39%;
+  height: 38%;
+  background-color: #f2f2f2;
+  padding: 30px 50px 40px 50px;
+  border-radius: 50px;
+  display: grid;
+  justify-items: center;
+  box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.descr {
+  font-size: 1.25rem;
+}
+
+.randomizador {
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+  border: 0;
+  font-size: 1.6rem;
+  background-color: #343434;
+  color: white;
+  margin: 1.85% auto;
+}
+
+.randomizador:hover {
+  background: conic-gradient(#ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+  cursor: pointer;
+}
+
+.randomizador:active, .cor:active {
+  position: relative;
+  top: 3px;
+}
+
+.caixa-menor {
+  display: flex;
+  margin-top: 25px;
+  width: 750px;
+  justify-content: space-around;
+}
+
+#cor1, #cor2 {
+  width: 148px;
+  height: 160px;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 1.05rem;
+}
+
+#cor1 div {
+  background-color: var(--color1);
+  width: 124px;
+  height: 90px;
+  border-radius: 10px 10px 5px 5px;
+}
+
+#cor2 div {
+  background-color: var(--color2);
+  width: 124px;
+  height: 90px;
+  border-radius: 10px 10px 5px 5px;
+}
+
+#cor1:hover {
+  cursor: pointer;
+  color: var(--color1);
+}
+
+#cor2:hover {
+  cursor: pointer;
+  color: var(--color2);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;  
+}
+
+#alerta-copia {
+  background-color: rgba(52, 52, 52, 0.8);
+  color: #f2f2f2;
+  position: fixed;
+  top: 60px;
+  width: 160px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  visibility: hidden;
+}
+
+.alerta-mobile {
+  height: 100vh;
+  padding: 30px;
+  background-color: #ffffff;
+  display: none;
+}
+
+.alerta-mobile img {
+  width: 80%;
+  margin-top: 30%;
+}

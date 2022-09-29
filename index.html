@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Gerador de Gradientes</title>
+        <meta name="description" content="Um simples gerador de gradientes utilizando cores aleatórias.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="folha-estilo.css">
+        <link rel="stylesheet" href="responsivo.css">
+    </head>
+    <body>
+        <div class="caixa">
+            <h1>Gerador de Gradientes</h1>
+            <p class="descr">Para começar, basta clicar no botão abaixo e o gerador criará um gradiente entre duas cores aleatórias!</p>
+            <button class="randomizador" onclick='colorBG()'>&#127922</button>
+            <p class="subtexto">Gostou de alguma cor? É só clicar nos botões abaixo para copiar o código HEX.</p>
+          </div>
+          <div class="caixa-menor">
+            <button class="cor" id="cor1" onclick="copiar('color1')"><div></div><p id="color1">#3C53C1</p></button>
+            <button class="cor" id="cor2" onclick="copiar('color2')"><div></div><p id="color2">#A3A6E9</p></button>
+          </div>
+        
+        <footer>
+          <p class="assinatura">Desenvolvido por <a href="https://github.com/joaolisb" target="_blank">João Lisboa</a></p>
+        </footer>
+        <!--Objetos Ocultos!-->
+        <div id="alerta-copia">
+          <p>Copiado!</p>
+        </div>     
+        <div class="alerta-mobile">
+          <h1>Ooops!</h1>
+          <p>Sinto muito, mas parece que o conteúdo desta página é melhor visualizado numa resolução um pouco maior!</p>
+          <img src="bad-robot.svg" alt="Nada para ver aqui" />
+        </div>
+
+        <script src="main-script.js" async defer></script>
+    </body>
+</html>
