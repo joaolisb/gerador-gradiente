@@ -6,34 +6,52 @@
         <title>Gerador de Gradientes</title>
         <meta name="description" content="Um simples gerador de gradientes utilizando cores aleatórias.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="folha-estilo.css">
-        <link rel="stylesheet" href="responsivo.css">
+        <link rel="stylesheet" href="resources/styles.css">
+        <link rel="stylesheet" href="resources/queries.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
     </head>
     <body>
-        <div class="caixa">
-            <h1>Gerador de Gradientes</h1>
-            <p class="descr">Para começar, basta clicar no botão abaixo e o gerador criará um gradiente entre duas cores aleatórias!</p>
-            <button class="randomizador" onclick='colorBG()'>&#127922</button>
-            <p class="subtexto">Gostou de alguma cor? É só clicar nos botões abaixo para copiar o código HEX.</p>
-          </div>
-          <div class="caixa-menor">
-            <button class="cor" id="cor1" onclick="copiar('color1')"><div></div><p id="color1">#3C53C1</p></button>
-            <button class="cor" id="cor2" onclick="copiar('color2')"><div></div><p id="color2">#A3A6E9</p></button>
-          </div>
-        
-        <footer>
-          <p class="assinatura">Desenvolvido por <a href="https://github.com/joaolisb" target="_blank">João Lisboa</a></p>
-        </footer>
-        <!--Objetos Ocultos!-->
-        <div id="alerta-copia">
-          <p>Copiado!</p>
-        </div>     
-        <div class="alerta-mobile">
-          <h1>Ooops!</h1>
-          <p>Sinto muito, mas parece que o conteúdo desta página é melhor visualizado numa resolução um pouco maior!</p>
-          <img src="bad-robot.svg" alt="Nada para ver aqui" />
-        </div>
+		<div id="main-page">
+			<section id="top-sect">
+				<button id="set-btn" onclick="openModal()"><img src="assets/settings-btn.svg" alt="Configurações" /></button>
+			</section>
+			<section id="middle-sect">
+				<img id="dice-btn" src="assets/dice-btn.svg" alt="🎲" width="100%" onclick="colorBG()" />
+				<button id="copy-btn" onclick="copyCSS()">Copiar CSS</button>
+			</section>
+			<section id="bottom-sect">
+				<p id="copy-msg">Código copiado para a área de transferência!</p>
+				<a href="https://github.com/joaolisb/" target="_blank"><img id="github" src="assets/github.svg"/></a>
+			</section>
+		</div>
+		
+		<button id="cloak" onclick="mainDisappear()"><i class="bi bi-eye-fill"></i></button>
+		
+		<div id="modal">
+		<div id="modal-close" onclick="closeModal()"></div>
+			<div id="modal-box">
+				<button id="close-btn" onclick="closeModal()"></button>
+				<h1>Gerador de Gradientes</h1>
+				<p>Este é um gerador de gradiente aleatório. Basta clicar no 🎲 e clicar em "Copiar CSS" caso tenha gostado! Você também pode clicar abaixo para mudar um pouco as coisas:</p>
+				
+				<p>Mudar a direção do gradiente:</p>
+				<div class="botoes">
+					<button class="dir-btn dir-1" onclick="changeDir(1)" onmouseover="displayText(1)" onmouseleave="stopText()"><img src="assets/ver-btn.svg" alt="Gradiente Vertical" /></button>
+					<button class="dir-btn dir-2" onclick="changeDir(2)" onmouseover="displayText(2)" onmouseleave="stopText()"><img src="assets/hor-btn.svg" alt="Gradiente Horizontal" /></button>
+					<button class="dir-btn dir-3" onclick="changeDir(3)" onmouseover="displayText(3)" onmouseleave="stopText()"><img src="assets/diag1-btn.svg" alt="Gradiente 45° - Esq. Superior para Dir. Inferior" /></button>
+					<button class="dir-btn dir-4" onclick="changeDir(4)" onmouseover="displayText(4)" onmouseleave="stopText()"><img src="assets/diag2-btn.svg" alt="Gradiente 45° - Dir. Superior para Esq. Inferior" /></button>
+					<button class="switch-btn" onclick="swapColors()" onmouseover="displayText(5)" onmouseleave="stopText()"><img src="assets/switch-btn.svg" alt="Inverter as cores" /></button>
+				</div>
+				<p id="button-txt">-</p>
+				
+				<p>Este é o código CSS do gradiente:</p>
+				<code><textarea id="css-copy" readonly>background: #c6ff96;
+background: linear-gradient(90deg, #c6ff96 0%, #40b4ff 100%);</textarea></code>
+				<p style="font-size: 0.8rem; text-align: center;">Desenvolvido por <a class="link-port" href="https://joaolisb.github.io/portfolio/" target="_blank">João Lisboa</a></p>
+			</div>
+		</div>
+		
 
-        <script src="main-script.js" async defer></script>
+        <script src="resources/main.js" async defer></script>
     </body>
 </html>
